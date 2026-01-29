@@ -76,14 +76,25 @@ export function AppLayout() {
                 </div>
 
                 <div className="p-4 border-t border-primary/20">
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setSidebarOpen(!sidebarOpen)}
-                        className="w-full justify-center hover:bg-primary/10 hover:text-primary transition-all"
-                    >
-                        <Menu className="h-4 w-4" />
-                    </Button>
+                    <div className={cn(
+                        "flex items-center gap-3 transition-all mb-4",
+                        sidebarOpen ? "px-2" : "justify-center"
+                    )}>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                            className="h-9 w-9 shrink-0 hover:bg-primary/10 hover:text-primary transition-all"
+                        >
+                            <Menu className="h-4 w-4" />
+                        </Button>
+                        {sidebarOpen && (
+                            <div className="flex flex-col whitespace-nowrap overflow-hidden">
+                                <span className="text-[10px] uppercase tracking-widest text-primary/40 font-bold">Project by</span>
+                                <span className="text-xs font-semibold text-primary/70">ADAM .JADYANE</span>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
 
