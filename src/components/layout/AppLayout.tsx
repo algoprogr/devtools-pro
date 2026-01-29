@@ -92,6 +92,38 @@ export function AppLayout() {
                     ))}
                 </div>
 
+                {/* Monetization: Go Pro & Ads */}
+                <div className="px-5 py-4 space-y-4">
+                    <div className="rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 p-4 relative overflow-hidden group">
+                        <div className="relative z-10">
+                            <h4 className="text-sm font-bold text-white mb-1 flex items-center gap-2">
+                                <Star className="h-4 w-4 text-primary fill-primary" />
+                                Go Pro
+                            </h4>
+                            <p className="text-[10px] text-muted-foreground mb-3">Get cloud savings & premium API access.</p>
+                            <Button size="sm" className="w-full h-8 text-[10px] bg-primary/20 hover:bg-primary/40 border border-primary/30 text-primary">
+                                Learn More
+                            </Button>
+                        </div>
+                        <div className="absolute top-0 right-0 -translate-y-4 translate-x-4 h-16 w-16 bg-primary/20 blur-2xl rounded-full" />
+                    </div>
+
+                    {sidebarOpen && (
+                        <div className="border border-dashed border-primary/20 rounded-lg p-3 bg-white/5 group hover:bg-white/10 transition-all cursor-pointer">
+                            <div className="flex justify-between items-start mb-1">
+                                <span className="text-[8px] uppercase tracking-widest text-primary/40">Sponsored</span>
+                                <Info className="h-3 w-3 text-primary/20 group-hover:text-primary/40" />
+                            </div>
+                            <div className="text-[11px] text-muted-foreground leading-snug">
+                                Carbon Ads: Reach developers on the top tool sites.
+                            </div>
+                            <div className="mt-2 flex items-center gap-1 text-[9px] text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                                View website <ExternalLink className="h-2 w-2" />
+                            </div>
+                        </div>
+                    )}
+                </div>
+
                 <div className="p-4 border-t border-primary/20">
                     <Button
                         variant="default"
