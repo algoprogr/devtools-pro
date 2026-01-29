@@ -13,14 +13,14 @@ export function Home() {
                     <Sparkles className="h-4 w-4" />
                     <span>Professional Developer Toolkit</span>
                 </div>
-                <h2 className="text-5xl font-bold tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse">
                         Your Ultimate
                     </span>
                     <br />
                     <span className="text-foreground">Development Arsenal</span>
                 </h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto px-4">
                     Streamline your workflow with our collection of powerful, beautifully designed tools.
                 </p>
             </div>
