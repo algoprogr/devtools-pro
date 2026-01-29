@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { tools } from '@/config/tools';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Star, ExternalLink } from 'lucide-react';
 
 export function Home() {
     const navigate = useNavigate();
@@ -33,6 +33,16 @@ export function Home() {
                         onClick={() => navigate(tool.to)}
                         style={{ animationDelay: `${index * 100}ms` }}
                     >
+                        {/* Pro Badge for some tools (simulation) */}
+                        {index > 3 && (
+                            <div className="absolute top-4 right-4 z-20">
+                                <div className="px-2 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary flex items-center gap-1">
+                                    <Star className="h-3 w-3 fill-primary" />
+                                    PRO
+                                </div>
+                            </div>
+                        )}
+
                         {/* Animated gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -61,6 +71,29 @@ export function Home() {
                         </CardContent>
                     </Card>
                 ))}
+            </div>
+
+            {/* Affiliate / Recommendations Section */}
+            <div className="border-t border-primary/10 pt-12">
+                <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-2">Recommended Developer Stack</h3>
+                    <p className="text-muted-foreground">The tools we use to build DevTools Pro.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                        { title: 'Premium Hosting', desc: 'Secure, fast, and globally distributed.', link: '#' },
+                        { title: 'UI Design Kit', desc: 'Professional Figma components.', link: '#' },
+                        { title: 'Dev Courses', desc: 'Master React and TypeScript.', link: '#' }
+                    ].map((item, i) => (
+                        <div key={i} className="p-4 rounded-xl border border-primary/10 bg-white/5 hover:bg-white/10 transition-all group cursor-pointer">
+                            <h4 className="font-bold text-primary mb-1 flex items-center justify-between">
+                                {item.title}
+                                <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </h4>
+                            <p className="text-xs text-muted-foreground">{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
