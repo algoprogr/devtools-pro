@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
-import { Menu, Zap, Heart, Star, ExternalLink, ShieldCheck, Info } from 'lucide-react';
+import { Menu, Zap, Heart, Star, ExternalLink, Info } from 'lucide-react';
 import { tools } from '@/config/tools';
 
 const sidebarItems = tools;
