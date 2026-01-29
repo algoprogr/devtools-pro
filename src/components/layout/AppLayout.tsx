@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
-import { Menu, Zap, Heart, Star, ExternalLink, ShieldCheck, Info } from 'lucide-react';
+import { Menu, Zap } from 'lucide-react';
 import { tools } from '@/config/tools';
 
 const sidebarItems = tools;
@@ -93,15 +93,6 @@ export function AppLayout() {
                 </div>
 
                 <div className="p-4 border-t border-primary/20">
-                    <Button
-                        variant="default"
-                        size="sm"
-                        className="w-full mb-4 bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary group"
-                    >
-                        <Heart className="h-4 w-4 mr-2 fill-primary/20 group-hover:fill-primary transition-all" />
-                        {sidebarOpen && "Support the Project"}
-                    </Button>
-
                     <div className={cn(
                         "flex items-center gap-3 transition-all mb-4",
                         sidebarOpen ? "px-2" : "justify-center"
